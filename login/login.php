@@ -18,23 +18,22 @@
             $userObj->setUser_name($_POST['username']);
             $userObj->setUser_password($_POST['password']);
             $result = $userObj->validate();
-            if($result ){
-                if(password_verify($user_entered_password,$result['user_password'])){
-                    $_SESSION['user_id']= $result['user_id'];
-                    $_SESSION['user_status_id']=$result['user_status_id'];
-                    $_SESSION['user_verified']=$result['user_verified'];
-                    $_SESSION['user_name']=$result['user_name'];
-                    $_SESSION['user_firstname']=$result['user_firstname'];
-                    $_SESSION['user_lastname']=$result['user_lastname'];
-                    $_SESSION['user_email']=$result['user_email'];
-                    $_SESSION['user_phonenumber']=$result['user_name'];
-                    $_SESSION['user_gender']=$result['user_gender'];
-                    $_SESSION['user_birthdate']=$result['user_birthdate'];
-                    $_SESSION['user_photo']=$result['user_photo'];
-                    $_SESSION['user_address']=$result['user_address'];
-                    $_SESSION['date_created']=$result['date_created'];
-                    header('location: ../hotel/hotelBrowse.php');
-                }
+            if($result && password_verify($user_entered_password,$result['user_password'])){
+                $_SESSION['user_id']= $result['user_id'];
+                $_SESSION['user_status_id']=$result['user_status_id'];
+                $_SESSION['user_verified']=$result['user_verified'];
+                $_SESSION['user_name']=$result['user_name'];
+                $_SESSION['user_firstname']=$result['user_firstname'];
+                $_SESSION['user_lastname']=$result['user_lastname'];
+                $_SESSION['user_email']=$result['user_email'];
+                $_SESSION['user_phonenumber']=$result['user_name'];
+                $_SESSION['user_gender']=$result['user_gender'];
+                $_SESSION['user_birthdate']=$result['user_birthdate'];
+                $_SESSION['user_photo']=$result['user_photo'];
+                $_SESSION['user_address']=$result['user_address'];
+                $_SESSION['date_created']=$result['date_created'];
+                header('location: ../hotel/hotelBrowse.php');
+                
                 //print_r($result);
                 
             }else{

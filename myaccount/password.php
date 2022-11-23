@@ -23,21 +23,6 @@
                 echo 'password saved';
             }
         }
-        
-
-        // if(validatePassword()){
-        //     // query the hashed password from the database
-        //     if(password_verify($user_entered_password,$result['user_password'])){
-
-        //     }
-        // }
-        // validation 
-
-        // check if same password
-
-        // check if npassword is same as ncpassword
-
-        // change in in the database
     }
     //print_r($_POST);
 
