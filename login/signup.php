@@ -43,7 +43,7 @@
                     $_SESSION['user_photo']=$result['user_photo'];
                     $_SESSION['user_address']=$result['user_address'];
                     $_SESSION['date_created']=$result['date_created'];
-                    header('location: ../hotel/hotelBrowse.php');
+                    header('location: ../myaccount/profile.php');
                 }else{
                     echo 'invalid username/password/email';
                 }

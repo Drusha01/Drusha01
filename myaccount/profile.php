@@ -10,8 +10,8 @@
         if(validateUpdateProfile($_POST)){
             $userObj = new Users();
 
-            print_r($_POST);
-            echo '<br>';
+            // print_r($_POST);
+            // echo '<br>';
 
             $userObj->setUser_id($_SESSION['user_id']);
             $userObj->setUser_firstname($_POST['fname']);
@@ -25,8 +25,8 @@
             }
 
             if(validateProfilePhoto($_FILES)){
-                $uploaddir = 'C:\Apache24\htdocs\WebProgFinal\img\profile\\';
-                $thumb = 'C:\Apache24\htdocs\WebProgFinal\img\thumbnail\\';
+                $uploaddir = 'C:\Apache24\htdocs\WebProgFinal\Drusha01\img\profile\\';
+                $thumb = 'C:\Apache24\htdocs\WebProgFinal\Drusha01\img\thumbnail\\';
                 $uploadfile = $uploaddir . ($_SESSION['user_id']).'.jpg';
                 $newpng = $_FILES['myImage']['tmp_name'];
                 $filename = $_FILES['myImage']['tmp_name'];
@@ -82,8 +82,8 @@
                         imagejpeg($imgResized, $thumb .$_SESSION['user_id'].'.jpg');
                     }
                 }
-                echo '<br>here';
-                print_r($_FILES);
+                // echo '<br>here';
+                // print_r($_FILES);
             }else{
                 $userObj->setUser_photo($_SESSION['user_id'].'.jpg');
             }
@@ -91,7 +91,7 @@
             // update user 
 
             $result = $userObj->userUpdate();
-            print_r($result);
+            // print_r($result);
     
 
 
@@ -111,7 +111,6 @@
     //print_r($_SESSION);
    
     //print_r($_FILES);
-    echo '<br>';
     echo '
     <html lang="en">
     <head>
@@ -131,8 +130,8 @@
         $userObj = new Users();
         $result = $userObj->getUserDetailsWithId($_SESSION['user_id']);
 
-        print_r($result);
-        echo '<br><br><br>';
+        // print_r($result);
+        // echo '<br><br><br>';
 
         if(!isset($result['user_photo'])){
             $result['user_photo'] = 'default.png';

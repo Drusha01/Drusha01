@@ -3,30 +3,34 @@ function validateString($POST,$name){
     return (isset($POST[$name]) && strlen(trim($POST[$name]))>1 ) ;
 }
 
-function validate_password($POST){
+function validate_password($POST,$passname){
     // to do
-    if(!isset($POST['password'])){
+    if(!isset($POST[$passname])){
         return false;
     }
-    elseif (strlen($_POST["password"]) <= '8') {
+    elseif (strlen($_POST[$passname]) <= '8') {
         return false;
     }
-    elseif(!preg_match("#[0-9]+#",$_POST["password"])) {
+    elseif(!preg_match("#[0-9]+#",$_POST[$passname])) {
         return false;
     }
-    elseif(!preg_match("#[A-Z]+#",$_POST["password"])) {
+    elseif(!preg_match("#[A-Z]+#",$_POST[$passname])) {
         return false;
     }
-    elseif(!preg_match("#[a-z]+#",$_POST["password"])) {
+    elseif(!preg_match("#[a-z]+#",$_POST[$passname])) {
         return false;
     }
-    $user_entered_password = $POST['password'];
+    $user_entered_password = $POST[$passname];
     $hashed_password = password_hash($user_entered_password, PASSWORD_ARGON2I);
-    $_POST["password"] = $hashed_password ; // global tho
+    $_POST[$passname] = $hashed_password ; // global tho
     return true; 
 }
 
-function validate_passwordErr($POST){
+function validateSameNewPassword($POST){
+    return isset($POST['npassword']) && isset($POST['ncpassword']) && strcmp($POST['ncpassword'],$POST['npassword']) == 0 ;
+}
+
+function validate_passwordErr($POST,$passname){
     // to do
     if (strlen($_POST["password"]) <= '8') {
         $passwordErr = "Your Password Must Contain At Least 8 Characters!";
@@ -65,7 +69,7 @@ function validate_birthdate($POST){
     return isset($POST['birthdate']);
 }
 function validate_signup($POST){
-    return (validateString($POST,'username') && validate_password($POST) && validateString($POST,'fname') && validateString($POST,'lname') && 
+    return (validateString($POST,'username') && validate_password($POST,'password') && validateString($POST,'fname') && validateString($POST,'lname') && 
     validate_email($POST) && validate_sex($POST,'sex') && validate_birthdate($POST,'birthdate'));
 }
 
@@ -75,7 +79,7 @@ function validateUpdateProfile($POST){
 }
 
 function validateLogin($POST){
-    return (validateString($POST,'username') && validate_password($POST));
+    return (validateString($POST,'username') && validate_password($POST,'password'));
 }
 
 function validateProfilePhoto($FILES){
@@ -84,6 +88,11 @@ function validateProfilePhoto($FILES){
 
 function sessionHandler($SESSION){
     return true;
+}
+
+function validatePassword($POST){
+    return validateSameNewPassword($POST) && 
+    true;
 }
 
 

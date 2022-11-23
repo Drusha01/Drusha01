@@ -79,6 +79,33 @@ Class users{
         return $data;
     }
 
+    function getUserHashedPassword($user_id){
+        try{
+            $sql = "SELECT user_password from users WHERE user_id =:user_id";
+            $query=$this->db->connect()->prepare($sql);
+            $query->bindParam(':user_id', $user_id);
+            if($query->execute()){
+                $data = $query->fetch();
+            }
+            return $data;
+        }
+        catch(PDOException $e){
+            return false;
+        }
+    }
+
+    function saveNewPassword($user_id, $hashed_password ){
+        try{
+            $sql = "UPDATE users  SET user_password =:user_password  WHERE user_id=:user_id;";
+            $query=$this->db->connect()->prepare($sql);
+            $query->bindParam(':user_id', $user_id);
+            $query->bindParam(':user_password', $hashed_password);
+            return $query->execute();
+        }catch(PDOException $e){
+            return false;
+        }
+    }
+
     function getUserDetailsWithId($user_id){
         $sql = "SELECT user_id, user_status_id, user_verified, user_name, user_firstname, user_lastname, user_email, user_phonenumber,user_gender, user_birthdate,user_photo, user_address, date_created, date_updated FROM users 
         WHERE user_id = (SELECT user_id FROM users WHERE user_id =:user_id);";

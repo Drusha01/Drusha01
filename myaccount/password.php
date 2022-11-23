@@ -2,9 +2,35 @@
     // ressume session if logged in
     session_start();
 
+    require_once '../tools/functions.php';
+    require_once '../classes/users.class.php';
+
     if(!isset($_SESSION['user_id'])){
         header('location: ../hotel/hotelBrowse.php');
-    }else{
+    }else if(isset($_POST['save']) && validateSameNewPassword($_POST)){
+        $cpassword = $_POST['cpassword'];
+        $npassword = $_POST['npassword'];
+        $ncpassword = $_POST['ncpassword'];
+
+        $userObj = new Users();
+
+        $result =  $userObj->getUserHashedPassword($_SESSION['user_id']);
+        if(password_verify($cpassword,$result['user_password'])){
+            // since we know that the password is the same, we will now hash the password
+            $hashed_password = password_hash($npassword, PASSWORD_ARGON2I);
+            $result =  $userObj->saveNewPassword($_SESSION['user_id'], $hashed_password );
+            if($result){
+                echo 'password saved';
+            }
+        }
+        
+
+        // if(validatePassword()){
+        //     // query the hashed password from the database
+        //     if(password_verify($user_entered_password,$result['user_password'])){
+
+        //     }
+        // }
         // validation 
 
         // check if same password
@@ -13,7 +39,7 @@
 
         // change in in the database
     }
-    print_r($_POST);
+    //print_r($_POST);
 
 
     require_once '../includes/header.php';
