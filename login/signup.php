@@ -37,7 +37,7 @@
                     $_SESSION['user_firstname']=$result['user_firstname'];
                     $_SESSION['user_lastname']=$result['user_lastname'];
                     $_SESSION['user_email']=$result['user_email'];
-                    $_SESSION['user_phonenumber']=$result['user_name'];
+                    $_SESSION['user_phonenumber']=$result['user_phonenumber'];
                     $_SESSION['user_gender']=$result['user_gender'];
                     $_SESSION['user_birthdate']=$result['user_birthdate'];
                     $_SESSION['user_photo']=$result['user_photo'];
@@ -64,10 +64,7 @@
 
 <div class="login-container">
         <form class="login-form" action="signup.php" method="post" enctype="multipart/form-data">
-            <div class="logo-details">
-                <img src="#" alt="">
-                <span class="logo-name">HotelBooking</span>
-            </div>
+            
             <hr class="divider">
             <label for="username">Username</label>
             <input type="text" id="username" name="username" placeholder="Enter username" required tabindex="1">

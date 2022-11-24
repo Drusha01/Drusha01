@@ -109,4 +109,57 @@ footer h3 {
     font-size: 14px;
 }
 
+.div1 {
+    border-radius: 25px;
+	width:600px;
+    border: 2px  rgb(4, 132, 155);
+    background-color:rgba(161, 170, 180, 0.8);   
+    text-align: left;
+    padding: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    height:250px;
+}
+.label{
+	padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+.buttonMyAccount {
+    background-color: #239bb5; 
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+  	padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    position: relative;
+  	left: 100px;
+    top: -100px;
+    border-radius: 5px;
+    
+}
+
+.buttonMyAccount:hover {
+    background-color: rgb(32, 6, 102);
+  }
+.div1 img{
+	border-radius: 50%;
+    position: relative;
+    left: 350px;
+    top: -150px;
+}
+
+.div1 .inputfile{
+    position: relative;
+    left: 400px;
+    top: 50px;
+}
 

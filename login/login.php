@@ -54,10 +54,7 @@
 
     <div class="login-container">
         <form class="login-form" action="login.php" method="post">
-            <div class="logo-details">
-                <img src="#" alt="">
-                <span class="logo-name">HotelBooking</span>
-            </div>
+            
             <hr class="divider">
             <label for="username">Username</label>
             <input type="text" id="username" name="username" placeholder="Enter username" required tabindex="1">

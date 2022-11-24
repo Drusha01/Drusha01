@@ -2,6 +2,7 @@
 <div class="navbar">
     <h1><a href="../hotel/hotelBrowse.php"  style ="text-decoration: none;">Hotel Reservation</a></h1>
     <ul>
+        <li><a href="../hotel/hotelBrowse.php"  style ="text-decoration: none;">Look for Hotel</a></li>
         <li><a href="../hotel/AddHotel.php"  style ="text-decoration: none;">My Hotel</a></li>
         <li><a href="#"  style ="text-decoration: none;">My bookings</a></li>
         <li><a href="#"  style ="text-decoration: none;">Notifications</a></li>
@@ -16,6 +17,7 @@
         ?>
 
 
-</div>
+
+
         
             

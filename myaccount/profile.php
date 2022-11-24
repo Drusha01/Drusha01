@@ -142,60 +142,46 @@
 
 
     $string = '
-    <div>
+    <div class="div1">
         <form action="profile.php" method="post" enctype="multipart/form-data">
-            <label for="username">Username</label>
-            <div>'.htmlentities($result['user_name']).'</div>
-
-            <label for="fname">First Name</label>
+            <label class ="label" for="username">Username: '.htmlentities($result['user_name']).'</label>
+            <br>
+            <label class ="label" for="fname">First name</label>
             <input type="text" id="fname" name="fname" value="'.htmlentities($result['user_firstname']).'" required tabindex="3">
             <br>
-            <label for="fname">Last Name</label>
+            <label class ="label" for="fname">Last name</label>
             <input type="text" id="lname" name="lname" value="'.htmlentities($result['user_lastname']).'" required tabindex="4">
             <br>
-            <label for="email">Email</label>
+            <label class ="label" for="email">Email</label>
             <input type="text" id="email" name="email" value="'.htmlentities($result['user_email']).'" required tabindex="5">
             <br>
-            <label for="phone">phone number</label>
+            <label class ="label" for="phone">phone number</label>
             <input type="text" id="phone" name="phone" value="'.htmlentities($result['user_phonenumber']).'" tabindex="6">
-            <div>
-                <label for="sex">Sex</label><br>
-                <label class="container" for="Male">Male
-                    <input type="radio" name="sex" id="M" value="M"  '.htmlentities($sex['M']).'>
-                    <span class="checkmark"></span>
-                </label>
-                <label class="container" for="Male">Female
-                    <input type="radio" name="sex" id="F" value="F" '.htmlentities($sex['F']).'>
-                    <span class="checkmark"></span>
-                </label>
-                <br>
-                <label for="birthdate">Birthdate:</label>
-                <input type="date" id="start" name="birthdate"
-                    value="'.htmlentities($result['user_birthdate']).'"
-                    min="1900-01-01" max="2022-12-12" >
-            </div>
-
-            
-            <label>upload profile picture
-            <input type="file" name="myImage" accept="image/png, image/gif, image/jpeg" />
+            <br>
+            <label class ="label" for="sex">Sex :</label>
+            <label class="container" for="Male">
+                <input type="radio" name="sex" id="M" value="M"  '.htmlentities($sex['M']).'>Male
             </label>
-
-
+            <label class="container" for="Male">
+                <input type="radio" name="sex" id="F" value="F" '.htmlentities($sex['F']).'>Female
+            </label>
             <br>
-            <input class="button" type="submit" value="save" name="save" tabindex="5">
+            <label class ="label" for="birthdate">Birthdate:</label>
+            <input type="date" id="start" name="birthdate"
+                value="'.htmlentities($result['user_birthdate']).'"
+                min="1900-01-01" max="2022-12-12" >
+                    
             <br>
+            
+            <input class="inputfile" type="file" name="myImage" accept="image/png, image/gif, image/jpeg" />
             <br>
-            <h6>profile thumbnail</h6>
-            <br>
-            <img src="../img/thumbnail/'.htmlentities($result['user_photo']).'" alt="" >
-            <br>
-            <h6>profile picture</h6>
-            <br>
-            <img src="../img/profile/'.htmlentities($result['user_photo']).'" alt="" >
+            <input class="buttonMyAccount" type="submit" value="save" name="save" tabindex="5">
+            <img src="../img/profile/'.htmlentities($result['user_photo']).'" width="150" height="150"alt="" >
         </form>
     </div>';
     echo $string;
     ?>
     
+
 </body>
 </html>
