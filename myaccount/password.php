@@ -38,10 +38,7 @@
 
 <div class="login-container">
         <form class="login-form" action="password.php" method="post" enctype="multipart/form-data">
-            <div class="logo-details">
-                <img src="#" alt="">
-                <span class="logo-name">HotelBooking</span>
-            </div>
+            
             <hr class="divider">
             <label for="currentPassword">Current Password</label>
             <input type="password" id="cpassword" name="cpassword" placeholder="" required tabindex="2" minlength="8">

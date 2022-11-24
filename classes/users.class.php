@@ -59,7 +59,7 @@ Class users{
     }
 
     function validate(){
-        $sql = "SELECT * FROM users WHERE user_name =:user_name ;";
+        $sql = "SELECT * FROM users WHERE BINARY user_name =:user_name ;";
         $query=$this->db->connect()->prepare($sql);
         $query->bindParam(':user_name', $this->user_name);
         if($query->execute()){

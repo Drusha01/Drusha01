@@ -111,17 +111,8 @@
     //print_r($_SESSION);
    
     //print_r($_FILES);
-    echo '
-    <html lang="en">
-    <head>
-    <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <title>Hotel Booking</title>
-    </head>
-    <body>';
 
+    require_once '../includes/header.php';
     require_once '../includes/topnav.php';
     require_once '../includes/profile.php';
     require_once '../includes/bottomnav.php';
@@ -194,13 +185,17 @@
             <input class="button" type="submit" value="save" name="save" tabindex="5">
             <br>
             <br>
+            <h6>profile thumbnail</h6>
+            <br>
             <img src="../img/thumbnail/'.htmlentities($result['user_photo']).'" alt="" >
+            <br>
+            <h6>profile picture</h6>
             <br>
             <img src="../img/profile/'.htmlentities($result['user_photo']).'" alt="" >
         </form>
     </div>';
     echo $string;
     ?>
-
+    
 </body>
 </html>
