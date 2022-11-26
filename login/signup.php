@@ -64,22 +64,24 @@
 
 <div class="login-container">
         <form class="login-form" action="signup.php" method="post" enctype="multipart/form-data">
-            
+            <div class="logo-details">
+                <span class="logo-name">Login</span>
+            </div>
             <hr class="divider">
             <label for="username">Username</label>
-            <input type="text" id="username" name="username" placeholder="Enter username" required tabindex="1">
+            <input  class ="form" type="text" id="username" name="username" placeholder="Enter username" required tabindex="1">
             <br>
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Enter password" value = "" required tabindex="2" minlength="8">
+            <input  class ="form" type="password" id="password" name="password" placeholder="Enter password" value = "" required tabindex="2" minlength="8">
             <br>
             <label for="fname">First Name</label>
-            <input type="text" id="fname" name="fname" placeholder="Enter First Name" required tabindex="3">
+            <input class ="form" type="text" id="fname" name="fname" placeholder="Enter First Name" required tabindex="3">
             <br>
             <label for="fname">Last Name</label>
-            <input type="text" id="lname" name="lname" placeholder="Enter Last Name" required tabindex="4">
+            <input class ="form" type="text" id="lname" name="lname" placeholder="Enter Last Name" required tabindex="4">
             <br>
             <label for="email">Email</label>
-            <input type="text" id="email" name="email" placeholder="Enter Email" required tabindex="5">
+            <input class ="form" type="text" id="email" name="email" placeholder="Enter Email" required tabindex="5">
         
             <div>
                 <label for="sex">Sex</label><br>
@@ -94,13 +96,13 @@
             </div>
             <br>
             <label for="birthdate">Birthdate:</label>
-            <input type="date" id="start" name="birthdate"
+            <input  class ="form" type="date" id="start" name="birthdate"
                 value="2000-08-31"
                 min="1900-01-01" max="2022-12-12" >
 
             
             <br>
-            <input class="button" type="submit" value="Signup" name="signup" tabindex="5">
+            <input  class="button" type="submit" value="Signup" name="signup" tabindex="5">
             <a href="login.php" style ="text-decoration: none;">Login?</a>
             <?php
             

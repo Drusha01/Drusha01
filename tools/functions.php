@@ -83,7 +83,7 @@ function validateLogin($POST){
 }
 
 function validateProfilePhoto($FILES){
-    return isset($_FILES['myImage']['tmp_name']) && $_FILES['myImage']['size']< 1000000  && $_FILES['myImage']['size'] > 0;
+    return isset($_FILES['myImage']['tmp_name']) && $_FILES['myImage']['size']< 10000000  && $_FILES['myImage']['size'] > 0;
 }
 
 function sessionHandler($SESSION){

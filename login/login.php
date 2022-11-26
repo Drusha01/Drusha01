@@ -52,14 +52,19 @@
 
 
 
+
+
     <div class="login-container">
         <form class="login-form" action="login.php" method="post">
             
+            <div class="logo-details">
+                <span class="logo-name">Login</span>
+            </div>
             <hr class="divider">
             <label for="username">Username</label>
-            <input type="text" id="username" name="username" placeholder="Enter username" required tabindex="1">
+            <input class ="form" type="text" id="username" name="username" placeholder="Enter username" required tabindex="1">
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Enter password" required tabindex="2" minlength="8">
+            <input class ="form" type="password" id="password" name="password" placeholder="Enter password" required tabindex="2" minlength="8">
             <input class="button" type="submit" value="Login" name="login" tabindex="3">
             <a href="signup.php" style ="text-decoration: none;">Signup?</a>
             <?php

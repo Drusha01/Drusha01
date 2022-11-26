@@ -68,7 +68,7 @@
                         // get ratio 
                         list($width, $height) = getimagesize($uploadfile);
                         // check who got the lowest
-                        $thumbnail_size = 80;
+                        $thumbnail_size = 150;
                         if($width < $height){
                             $ratio = $height/$width;
                             $width = $thumbnail_size;
@@ -142,32 +142,39 @@
 
 
     $string = '
-    <div class="div1">
-        <form action="profile.php" method="post" enctype="multipart/form-data">
+    <div class="login-container">
+        <form  class="login-form" action="profile.php" method="post" enctype="multipart/form-data">
             <label class ="label" for="username">Username: '.htmlentities($result['user_name']).'</label>
             <br>
+            <br>
             <label class ="label" for="fname">First name</label>
-            <input type="text" id="fname" name="fname" value="'.htmlentities($result['user_firstname']).'" required tabindex="3">
+            <input class ="form" type="text" id="fname" name="fname" value="'.htmlentities($result['user_firstname']).'" required tabindex="3">
             <br>
             <label class ="label" for="fname">Last name</label>
-            <input type="text" id="lname" name="lname" value="'.htmlentities($result['user_lastname']).'" required tabindex="4">
+            <input  class ="form" type="text" id="lname" name="lname" value="'.htmlentities($result['user_lastname']).'" required tabindex="4">
             <br>
             <label class ="label" for="email">Email</label>
-            <input type="text" id="email" name="email" value="'.htmlentities($result['user_email']).'" required tabindex="5">
+            <input class ="form" type="text" id="email" name="email" value="'.htmlentities($result['user_email']).'" required tabindex="5">
             <br>
             <label class ="label" for="phone">phone number</label>
-            <input type="text" id="phone" name="phone" value="'.htmlentities($result['user_phonenumber']).'" tabindex="6">
+            <input class ="form" type="text" id="phone" name="phone" value="'.htmlentities($result['user_phonenumber']).'" tabindex="6">
             <br>
-            <label class ="label" for="sex">Sex :</label>
-            <label class="container" for="Male">
-                <input type="radio" name="sex" id="M" value="M"  '.htmlentities($sex['M']).'>Male
+            <div>
+            <label for="sex">Sex</label><br>
+            <label class="container" for="M">Male
+                <input type="radio" name="sex" id="M" value="M" '.htmlentities($sex['M']).'>
+                <span class="checkmark"></span>
             </label>
-            <label class="container" for="Male">
-                <input type="radio" name="sex" id="F" value="F" '.htmlentities($sex['F']).'>Female
+            <label class="container" for="F">Female
+                <input type="radio" name="sex" id="F" value="F" '.htmlentities($sex['F']).'>
+                <span class="checkmark"></span>
             </label>
+            </div>
+
+           
             <br>
             <label class ="label" for="birthdate">Birthdate:</label>
-            <input type="date" id="start" name="birthdate"
+            <input class ="form" type="date" id="start" name="birthdate"
                 value="'.htmlentities($result['user_birthdate']).'"
                 min="1900-01-01" max="2022-12-12" >
                     
@@ -175,7 +182,7 @@
             
             <input class="inputfile" type="file" name="myImage" accept="image/png, image/gif, image/jpeg" />
             <br>
-            <input class="buttonMyAccount" type="submit" value="save" name="save" tabindex="5">
+            <input class="button" type="submit" value="save" name="save" tabindex="5">
             <img src="../img/profile/'.htmlentities($result['user_photo']).'" width="150" height="150"alt="" >
         </form>
     </div>';

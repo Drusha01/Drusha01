@@ -41,13 +41,13 @@
             
             <hr class="divider">
             <label for="currentPassword">Current Password</label>
-            <input type="password" id="cpassword" name="cpassword" placeholder="" required tabindex="2" minlength="8">
+            <input class ="form" type="password" id="cpassword" name="cpassword" placeholder="" required tabindex="2" minlength="8">
             <br>
             <label for="password">New Password</label>
-            <input type="password" id="npassword" name="npassword" placeholder="" required tabindex="2" minlength="8">
+            <input class ="form" type="password" id="npassword" name="npassword" placeholder="" required tabindex="2" minlength="8">
             <br>
             <label for="password">Confirm Password</label>
-            <input type="password" id="ncpassword" name="ncpassword" placeholder="" required tabindex="2" minlength="8">
+            <input  class ="form" type="password" id="ncpassword" name="ncpassword" placeholder="" required tabindex="2" minlength="8">
             <br>
             <input class="button" type="submit" value="save" name="save" tabindex="5">
         </form>
