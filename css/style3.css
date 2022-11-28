@@ -1,13 +1,17 @@
 *{
     font-family:'Poppins', sans-serif;
-        margin: 0px;
-    }
+    margin: auto;
+    font-size: large;
+    color: white;
+
+
+}
+
     .header{
         width: 100%;
         min-width:1200px;
         position: fixed;
-        background: rgb(2,0,36);
-        background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 0%, rgba(37,68,217,1) 100%);
+        background-color: transparent;
         height:180px;
     }
     .home{
@@ -18,12 +22,13 @@
     
     .home a{
         text-decoration: none;
+        text-decoration-color: white;
     }
     .links{
         padding-right:calc((100% / 2) - 600px);
     }
     .links ul{
-        margin-top: 20px;
+        padding-top: 10px;
         text-align: right;
         padding-right: 20px;
         font-size: larger;
@@ -32,13 +37,6 @@
       display:inline;
     
     }
-
-    .links li img{
-        display:inline;
-        border-radius: 50%;
-        position: relative;
-        top: 20px;
-      }
     
     .links a{
         padding: 10px;
@@ -91,7 +89,7 @@
     }
     
     .button{
-        background-color: #1406ca;
+        background-color: rgb(60, 179, 113);
         width: 100%;
         color: white;
         border: none;
@@ -109,13 +107,13 @@
     }
     
     .login-container{
-        padding-top: 200px;
+        margin-top: 200px;
+        padding-top: 300px;
         width: 100%;
-        height: calc(100vh);
-        display: flex;
         align-items: center;
         justify-items: center;
-        overflow: hidden;
+        font-size: large;
+        position: fixed;
         
     }
     
@@ -133,7 +131,8 @@
         padding: 40px;
         margin: 0 auto;
         background: rgb(2,0,36);
-        background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(100,255,240,1) 0%, rgba(37,68,217,1) 100%);
+        background-color: rgba(41, 39, 39, 0.3);
+        box-shadow: 0 5px 30px black;
         border-radius: 20px;
         position: relative;
         top:-100px;
@@ -149,13 +148,13 @@
     .login-form .logo-details i{
         font-size: 40px;
         font-weight: 800;
-        color: #107869;
+        color: rgb(60, 179, 113);;
         text-align: center;
         padding-right: 5px;
     }
     
     .login-form .logo-details .logo-name{
-        color: #107869;
+        color: white;
         font-size: 36px;
         font-weight: 500;
     }
@@ -182,7 +181,7 @@
         width: 250px;
         height: calc(100vh);
         overflow: hidden;
-        background-color: #107869;
+        background-color: #010706;
     }
     
     .side-bar .logo-details{
@@ -672,15 +671,12 @@
       }
 
       body,html{
-        
         height: 100%;
         min-width: 1250px;
       }
 
       .background {
-        /* The image used */
-    
-      
+        background-image: url("../img/black-background.jpeg");
         /* Full height */
         height: 100%;
         /* Center and scale the image nicely */
@@ -702,9 +698,6 @@
     }
 
     .column img{
-        width: 290px;
-        height: 200px;
-        object-fit: cover;
         border-radius: 10px;
         border-style: solid;
         border-width: 2px;
@@ -715,83 +708,7 @@
         color: rgb(25, 6, 190);
     }
 
-    
-    
     /* Clear floats after image containers */
     .row{
         margin-left: calc((100%) / 2 - 600px);
-    }
-      
-
-
-    .content{
-        position:relative;
-        margin-top:200px;
-        margin-left:calc((100% /2 ) - 600px);
-        width:1200px;
-        height:300px;
-    }
-    
-    .img img{
-        width:1200px;
-        height: 300px;
-        object-fit: cover;
-    }
-    
-    .name{
-        position:fixed;
-        top:0px;
-        margin:auto;
-    
-    }
-    
-    .img {
-      position: relative;
-      text-align: center;
-      color: white;
-    }
-    
-    .centered1 {
-      position: absolute;
-      top: 90%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: coral;
-      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-      font-size:1cm;
-    }
-    
-    .rooms{
-        margin-top:50px;
-        width:1200px;
-        height:300px;
-        background-color:blue;
-    }
-    
-    .rooms img{
-        margin:5px;
-        position:relative;
-        width:400px;
-        height:290px;
-        object-fit: cover;
-    }
-    .rooms p.roomname{
-    position: relative;
-      top:-250px;
-      left:450px;
-        
-    }
-    
-    .rooms p.roomprice{
-    position: relative;
-      top:-210px;
-      left:450px;
-        
-    }
-    
-    .rooms p.roomfeatures{
-    position: relative;
-      top:-170px;
-      left:450px;
-        
     }

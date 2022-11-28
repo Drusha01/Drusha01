@@ -7,7 +7,7 @@ Class hotels{
     private $user_id;
     private $hotel_name;
     private $hotel_status_id;
-    private $hotel_background_photo;
+    private $hotel_back_ground_photo;
     private $hotel_thumbnail_photo;
     private $hotel_description;
     private $hotel_address;
@@ -21,7 +21,7 @@ Class hotels{
     function setUser_id($user_id){$this->user_id = $user_id;}
     function setHotel_name($hotel_name){$this->hotel_name = $hotel_name;}
     function setHotel_status_id($hotel_status_id){$this->hotel_status_id = $hotel_status_id;}
-    function setHotel_background_photo($hotel_background_photo){$this->hotel_background_photo = $hotel_background_photo;}
+    function setHotel_back_ground_photo($hotel_back_ground_photo){$this->hotel_back_ground_photo = $hotel_back_ground_photo;}
     function setHotel_thumbnail_photo($hotel_thumbnail_photo){$this->hotel_thumbnail_photo = $hotel_thumbnail_photo;}
     function setHotel_description($hotel_description){$this->hotel_description = $hotel_description;}
     function setHotel_address($hotel_address){$this->hotel_address = $hotel_address;}
@@ -34,7 +34,7 @@ Class hotels{
     function getUser_id(){return $this->user_id;}
     function getHotel_name(){return $this->hotel_name;}
     function getHotel_status_id(){return $this->hotel_status_id;}
-    function getHotel_background_photo(){return $this->hotel_background_photo;}
+    function getHotel_background_photo(){return $this->hotel_back_ground_photo;}
     function getHotel_thumbnail_photo(){return $this->hotel_thumbnail_photo;}
     function getHotel_description(){return $this->hotel_description;}
     function getHotel_address(){return $this->hotel_address;}
@@ -109,6 +109,100 @@ Class hotels{
         }
     }
 
+    function getHotelID($user_id){
+        try
+        {    
+            $sql = "SELECT hotel_id from hotels
+            WHERE user_id=:user_id";
+            $query=$this->db->connect()->prepare($sql);
+            $query->bindParam(':user_id', $user_id);
+            if($data = $query->execute()){
+                $data = $query->fetch();
+                return $data;
+            }
+        }
+        catch (PDOException $e)
+        {
+            return false;
+        }
+    }
+
+    function updateHotel(){
+
+
+        $sql = "UPDATE hotels
+        SET hotel_name=:hotel_name ,hotel_back_ground_photo=:hotel_back_ground_photo, hotel_thumbnail_photo=:hotel_thumbnail_photo,hotel_description =:hotel_description,hotel_phone_number=:hotel_phone_number 
+        WHERE user_id=:user_id AND hotel_id=:hotel_id;";
+
+        $query=$this->db->connect()->prepare($sql);
+        $query->bindParam(':hotel_name', $this->hotel_name);
+        $query->bindParam(':hotel_back_ground_photo', $this->hotel_back_ground_photo);
+        $query->bindParam(':hotel_thumbnail_photo', $this->hotel_thumbnail_photo);
+        $query->bindParam(':hotel_description', $this->hotel_description);
+        $query->bindParam(':hotel_phone_number', $this->hotel_phone_number);
+        $query->bindParam(':user_id', $this->user_id);
+        $query->bindParam(':hotel_id', $this->hotel_id);
+        if($data = $query->execute()){
+            return $data;
+        }else{
+            return false;
+        }
+    }
+
+
+    function createHotel(){
+        try
+        {    
+            
+            $sql = "INSERT INTO hotels (user_id, hotel_name, hotel_status_id, hotel_back_ground_photo, hotel_thumbnail_photo, hotel_description, hotel_address, hotel_phone_number) VALUES(
+                :user_id,:hotel_name,:hotel_status_id, :hotel_back_ground_photo, :hotel_thumbnail_photo, :hotel_description, :hotel_address, :hotel_phone_number
+            )";
+            $query=$this->db->connect()->prepare($sql);
+            
+            $query->bindParam(':user_id', $this->user_id);
+            $query->bindParam(':hotel_name', $this->hotel_name);
+            $query->bindParam(':hotel_status_id', $this->hotel_status_id);
+            $query->bindParam(':hotel_back_ground_photo', $this->hotel_back_ground_photo);
+            $query->bindParam(':hotel_thumbnail_photo', $this->hotel_thumbnail_photo);
+            $query->bindParam(':hotel_description', $this->hotel_description);
+            $query->bindParam(':hotel_address', $this->hotel_address);
+            $query->bindParam(':hotel_phone_number', $this->hotel_phone_number);
+            $data = $query->execute();
+            return $data;
+        }
+        catch (PDOException $e)
+        {
+            return false;
+        }
+    }
+
+    function updatePhoto(){
+        try
+        {    
+            
+            $sql = "UPDATE hotels 
+            SET hotel_back_ground_photo = :hotel_back_ground_photo , hotel_thumbnail_photo = :hotel_thumbnail_photo
+            WHERE hotel_id = :hotel_id
+            ;";
+            $query=$this->db->connect()->prepare($sql);
+            echo 'h:'.$this->hotel_id;
+            echo '<br>b:L'.$this->hotel_back_ground_photo;
+            echo '<br>b:'.$this->hotel_thumbnail_photo;
+            $query->bindParam(':hotel_id', $this->hotel_id);
+            $query->bindParam(':hotel_back_ground_photo', $this->hotel_back_ground_photo);
+            $query->bindParam(':hotel_thumbnail_photo', $this->hotel_thumbnail_photo);
+            if($data = $query->execute()){
+                return $data;
+            }else{
+                return false;
+            }
+        }
+        catch (PDOException $e)
+        {
+            print_r($e);
+            return false;
+        }
+    }
 
 }
 ?>

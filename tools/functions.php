@@ -95,5 +95,8 @@ function validatePassword($POST){
     true;
 }
 
+function validateHotel($POST){
+    return validateString($POST,'hname') && validateString($POST,'hdesc') && validateString($POST,'haddr') && validate_phone($POST);
+}
 
 ?>

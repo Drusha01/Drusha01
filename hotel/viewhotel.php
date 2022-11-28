@@ -23,7 +23,7 @@
         $result = $hotelObj->getHotelDetails($index);
         if($result){
             // edit their hotel
-            print_r($result);
+            //print_r($result);
         }else{
             // ask them to add their hotel
             echo 'add your hotel';
@@ -38,14 +38,25 @@
     
    
     
-?>
 
-    hotel_name 
-    hotel_background_photo
-    hotel_description
-    hotel_address
-    hotel_phone_number
+    $content ='
+    <div class="content">
+        <div class="img">
+            <img src="../img/hotel/'.$result['hotel_thumbnail_photo'].'" alt="">
+            <div class="centered1">Welcome to '.$result['hotel_name'].'</div>
+        </div>
+        <div> '.$result['hotel_description'].'</div>
+        <div class="rooms">
+            <img src="https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2018/11/what-is-html-3.jpg" alt="">
+            <p class="roomname">Type: <span>Single</span></p>
+            <p class="roomprice">Price: <span>696.9 PHP</span></p>
+            <p class="roomfeatures">Features: City view -Non-smoking- Shower and bathtub -Free Wi-Fi</p>
+        </div>
+    </div>';
+    echo $content;
+    ?>
+
+
     <br>
-    DISPLAY HOTEL HERE IF HAVE, ELSE PROMPT TO REGISTER THEIR HOTEL, AFTER THAT WAIT FOR APPROVAL FROM ADMIN
 </body>
 </html>

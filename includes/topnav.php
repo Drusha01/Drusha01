@@ -7,13 +7,27 @@
             <li><a class="link" href="#"  style ="text-decoration: none;">Notifications</a></li>
             <?php 
                 if(isset($_SESSION['user_id'])){
-                    echo '<li><a class="link" href="../myaccount/profile.php" style ="text-decoration: none;">My Account</a></li>
+                  if(isset( $_SESSION['user_id'])){
+                    $photo = $_SESSION['user_photo'];
+                    $username = $_SESSION['user_name'];
+                  }else{
+                    $photo ='default.png';
+                    $username ='';
+                  }
+                 
+                  echo '<li><a href="../myaccount/profile.php" ><img src="../img/thumbnail/'.$photo.'"  width="50" height="50"></a></li>';
+                  echo '<li><a class="link" href="../myaccount/profile.php" style ="text-decoration: none;">'.$username.'</a></li>
                             <li><a class="link" href="../login/logout.php" style ="text-decoration: none;" >Log out</a></li>';
                 }else{
                     echo '<li><a class="link" href="../login/login.php" style ="text-decoration: none;">Login</a></li>';
                     echo '<li><a class="link" href="../login/signup.php" style ="text-decoration: none;">Signup</a></li>';
                 }
+
+                
                 ?>
+
+    
+  
     </ul>
   </div>
   <div class="home">

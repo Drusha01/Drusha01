@@ -39,7 +39,7 @@
         echo '
         <div class="column">
             <a href="../hotel/viewhotel.php?index='.$result[$counter]['hotel_id'].'">
-                <img src="../img/hotel_thumbnail_photo.jpg" alt="Snow" style="width:100%">
+                <img src="../img/hotelthumbnail/'.$result[$counter]['hotel_thumbnail_photo'].'" alt="Snow" style="width:100%">
             </a>
             <h2 class="centered">'.$result[$counter]['hotel_name'].'</h2>
         </div>';
