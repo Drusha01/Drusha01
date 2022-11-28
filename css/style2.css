@@ -109,7 +109,6 @@
     }
     
     .login-container{
-        padding-top: 200px;
         width: 100%;
         height: calc(100vh);
         display: flex;
@@ -794,4 +793,20 @@
       top:-170px;
       left:450px;
         
+    }
+
+    .profile{
+        margin-top: 200px;
+    }
+
+    .profilelinks{
+        width: 200px;
+        height: 30px;
+        background-color: #66b0ff;
+        text-align: left;
+        padding-left: 30px;
+    }
+
+    .profilelinks a{
+        width: 200px;
     }
